@@ -1,7 +1,15 @@
-'use strict';
+// let name = 'Seroga'; // string
+// let age = 19; // num
+// let isAgeMore18 = true; // bool
+// let money = null; // null
+// let isClever; // underfind
+// console.log(typeof money);
+
+
 // const day = 29;
 // const month = 6;
 // const year = 1919;
+// console.log('I born in ' + day + '/' + month + '/' + year);
 // const BIRTHDAY = `I born in ${day}/${month}/${year}`;
 // console.log(BIRTHDAY);
 
@@ -19,7 +27,7 @@
 // console.log(search);
 
 
-// console.log('I'm happy');
+// console.log('I am happy');
 // console.log('I\'m happy');
 
 
@@ -35,6 +43,27 @@
 
 
 
+// let num = prompt('enter num: ');
+
+// if (num > 10) {
+//     console.log('> 10');
+// } else if (num <= 10) {
+//     console.log('< 10');
+// } else {
+//     console.log('It is\'t number');
+// }
+
+
+// let input = +prompt('enter') 
+// if (!isNaN(input)) {
+//     if (input < 3 || input === 12) {
+//         console.log('W');
+//     } else if (input > 2) {
+//         console.log('S')
+//     }    
+// } else {
+//     console.log('Enter corect number');
+// }
 // const Num = Number(prompt());
 
 // if(Num > 10) {
@@ -98,7 +127,6 @@
 
 
 // let num = +prompt();
-
 // let a = 10;
 // let b = 12; 
 
@@ -130,5 +158,18 @@
 //     default:
 //         console.log('Такого курсу не існує');
 // }
+
+
+let input = +prompt('Enter');
+let is_NaN = !isNaN(input);
+
+switch(is_NaN) {
+    case true:
+        console.log('Number');
+    break;
+    case false:
+        console.log('NaN');
+    break;
+}
 
 
