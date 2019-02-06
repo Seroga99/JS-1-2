@@ -1,5 +1,8 @@
 "use strict";
 
+// let arr2 = ['Anton', 'Dima', 'Bohdan','Georg', 'Danil', 'Oleh'];
+// let arrResult = arr2.slice(2);
+// console.log(arrResult);
 
 // 111111111111111111111111111111111111111
 /*
@@ -54,7 +57,7 @@
 
 // while(counter < 10 ) {
 //   console.log(counter);
-//   counter +=1;
+//   counter += 1;
 // }
 
 // do {
@@ -63,27 +66,49 @@
 // } while(counter < 10 );
 
 
-
 // for(let counter = 0; counter < 10; counter++) {
 //   console.log(counter);
 // }
 
 // const clients = ['Mango', 'Ajax', 'Poly'];
 
-// for(let i = 0; i < clients.length; i += 1) {
+// for(let i = 0; i < clients.length ; i += 1) {
 //   console.log(clients[i]);
 // }
 
 
+// const numbers = [1, 3, 4, 10, 22, 12, 3, 13]; 
+// const newNum = [];
 
-const numbers = [1, 3 ,4, 10, 22, 12, 3, 12];
-const userInput =  prompt('Enter number:');
-let hasNum = false;
+// for(let i = 0; i < numbers.length; i++) {
+//   if(numbers[i] > 10) {
+//     newNum.push(numbers[i])
+//   }
+// }
+// for(const i of numbers) {
+//   if(i > 10) {
+//     newNum.push(i);
+//   }
+// }
 
-for(const num of numbers) {
-  console.log(num);
-}
+// console.log(newNum);
 
+
+
+// const numbers = [1, 3 ,4, 10, 22, 12, 3, 12];
+// const userInput =  +prompt('Enter number:');
+// let hasNum = false;
+
+// for(const num of numbers) {
+//   if(userInput === num) {
+//     hasNum = true;
+//     break;
+//   } 
+// }
+// console.log(hasNum);
+
+// const massage = hasNum ? 'Таке число є' : 'Такого числа немає';
+// console.log(massage);
 
 
 
@@ -221,3 +246,45 @@ for(const num of numbers) {
 //   }
 // }
 // console.log(newArray);
+
+
+// // group - 2
+
+// /*
+//   Напишите скрипт, который проверяет произвольную строку 
+//   в переменной string и находит в ней самое длинное слово,
+//   записывая его в переменную longestWord.
+// */
+
+// const string = "May the  force be with you";
+// let longestWord = '';
+// const arr = string.split(' ');
+
+// for(const el of arr) {
+//   if(el.length > longestWord.length) {
+//     longestWord = el; 
+//   }
+// }
+// console.log(longestWord); // 'force'
+
+
+// /*
+//   Напишите скрипт который:
+  
+//   - Запрашивает по очереди числа при помощи prompt и сохраняет их в массиве.
+//     Используйте do...while.
+//   - Проверять что пользователь ввел не число не обязательно
+//   - Заканчивает запрашивать числа как только пользователь нажмёт Cancel.
+//   - После того как ввод был завершен, если массив не пустой, 
+//     скрипт выводит сумму всех значений массива: "Сумма: <сумма всех значений в массиве>"
+//     Используйте цикл for...of
+// */
+
+let a;
+let sum = 1;
+do {
+  a = Number(prompt('Enter some number'));
+  sum = sum + a;
+} while(a === 0)
+
+console.log(sum);
