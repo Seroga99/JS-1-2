@@ -280,11 +280,11 @@
 //     Используйте цикл for...of
 // */
 
-let a;
-let sum = 1;
-do {
-  a = Number(prompt('Enter some number'));
-  sum = sum + a;
-} while(a === 0)
+// let a;
+// let sum = 0;
+// do {
+//   a = +Number(prompt('Enter some number'));
+//   sum = sum + a;
+// } while(a !== 0)
 
-console.log(sum);
+// console.log(sum);
