@@ -73,12 +73,41 @@
 
 
 
+// =========================================================
 
+// const transfornArrToNumber = function (arr) {
+//     const newArr = [];
 
+//     for(let el of arr) {
+//         newArr.push(+el)
+//     }
 
+//     return newArr;
+// }
 
+// const getUserInput = function() {
+//     const input = prompt('Enter some number');
 
+//     if(input === null) {
+//         return
+//     }
 
+//     const arr = input.split('');
+//     return arr;
+// }
+
+// const arrString = getUserInput();
+
+// const getArrNumbers = function (arr) {
+//     let newArr = transfornArrToNumber(arr);
+//     return newArr;
+// }
+
+// console.log(getArrNumbers(arrString));
+
+// ===========================================================
+
+ 
 
 
 
