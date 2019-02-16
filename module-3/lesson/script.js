@@ -1,9 +1,31 @@
-"use strict"
+"use strict";
+
+// const fn = function (num1, num2) {
+//   return num1 + num2;
+// }
+// let number = fn(23, 45);
+// console.log(number);
+
+// function fnA (a, b) {
+//   let result = a + b;
+//   return result;
+// }
+// console.log(fnA(23, 48));
+
+// const fnSumm = (a) =>  console.log(a);
+// fnSumm(10);
+
+
 // =====================================================
 // const fn = function () {
 //     console.log('Hello, I am function');
 // }
 
+// const fn = function () {
+//   console.log(Array.from(arguments));
+
+// }
+// fn(1, 4, 5, 6, 10000, 'dsfds');
 
 // ====================================================
 // let firstNum = +prompt('Enter first number:');
@@ -118,15 +140,18 @@
 
 // spread і rest 
 
-// const arr = [1, 2, 3, 4];
+// const numsArr = [1, 2, 3, 4];
 // const arr2 = [arr[0], arr[1], arr[2], arr[3] ];
-// const arr3 = [...arr]; // spread
+// const arr3 = [...numsArr]; // spread
 // console.log(arr);
 // console.log(arr2);
 // console.log(arr3);
 
 
-// const arr = [1, 2, 3, 4];
+// const arr = [1, 2, 3, 4, 'sdsd', 4,  3, 4, 'sdsdsd' ];
+// const [a, b, ...rest] = arr;
+// console.log(rest);
+
 // const [...rest] = arr; // rest
 // console.log(rest);
 
@@ -140,16 +165,14 @@
 
 // const fnForLernArg = function () {
 
-    // console.log(arguments);
+//     console.log(arguments);
 
-    // let arr = Array.from(arguments);
-    // console.log(arr);
+//     let arr = Array.from(arguments);
+//     console.log(arr);
 
-    // console.log([...arguments]);
-
-    // console.log(args);
-    
+//     console.log([...arguments]);
 // } 
+
 // fnForLernArg(2, 4, 6, 1, 3, 4, 10);
 
 
@@ -170,18 +193,17 @@
 // Область бачення 
 
 
-
-
-// // Gle = {}
+// Gle = {}
 // const a = 20;
 // const b = 30;
 // // Gle = {a: 20, b: 30}
 
 // const add = function () {
 //     // LE = {}
+//     const z = 10;
 //     const a = 5;
-//     // LE = {a: 5}
 //     return a + b;
+
 // }
 
 // // Cle = {a: 20, b: 10, add: fn}
@@ -231,7 +253,6 @@
 
 // const getNumber = function (onCancel, onError, onSuccess) {
 //     const input = prompt('Enter: 0 < number > 5');
-
 //     if(input === null) {
 //         onCancel();
 //         return;
@@ -243,8 +264,6 @@
 //     onSuccess();
 // }
 // getNumber(showGoodbye, showError, showSuccess);
-
-
 
 
 // ===================================================== dop task
@@ -314,3 +333,81 @@
 //     formatString("Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.")
 //   ); // вернется форматированная строка
   
+
+
+
+
+
+
+/*
+  Напишите функцию checkNumberType(num)
+  
+  Функция получает число num как аргумент и возвращает 
+  строку "Even" если число четное и строку "Odd" если не четное.
+*/
+
+/*
+  Напишите функцию checkForSpam(str)
+  
+  Функция принимает 1 параметр str - строку,
+  и проверять ее на содержание слов: spam и sale
+  
+  Если нашли зарещенное слово то функция возвращает true,
+  если запрещенных слов нет функция возвращает false
+  
+  PS: слова могут быть в произвольном регистре
+*/
+
+
+// const checkForSpam = str => {
+//   let newSrt = str.toLowerCase();
+//   let spamStr = 'spam'.toLowerCase();
+//   let saleStr = 'sale'.toLowerCase();
+//     if(newSrt.includes(spamStr) || newSrt.includes(saleStr)) {
+//       return true;
+//     } else {
+//       return false;
+//     }
+// }
+
+
+
+// // Вызовы функции для проверки
+// console.log( checkForSpam('Latest technology news') ); // false
+
+// console.log( checkForSpam('JavaScript weekly newsletter') ); // false
+
+// console.log( checkForSpam('Get best sale offers now!') ); // true
+
+// console.log( checkForSpam('[SPAM] How to earn fast money?') ); // true
+
+
+
+
+
+/*  
+  Написать функцию, getPx(str) 
+
+  Функция getPx должна получать строку вида '10px',
+  проверять была ли передана строка, если да, 
+  возвращать только числовую составляющую, к примеру 10.
+    
+  Если была передана не строка, функция возвращает null.
+*/
+
+// const getPx = (str) => {
+//   let result = Number.parseFloat(str);
+//   if(typeof str === 'string') {
+//     return result;
+//   } else {
+//     return null;
+//   }
+// }
+
+// // Вызовы функции для проверки
+// console.log( getPx("10px") === 10 ); // должно быть:  true
+// console.log( getPx("10.5") === 10.5 ); // должно быть:  true
+// console.log( getPx("0") === 0 ); // должно быть:  true
+// console.log( getPx(-1) ); // должно быть:  null
+// console.log( getPx(10) ); // должно быть:  null
+
