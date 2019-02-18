@@ -411,3 +411,152 @@
 // console.log( getPx(-1) ); // должно быть:  null
 // console.log( getPx(10) ); // должно быть:  null
 
+
+
+
+
+
+// Замикання
+// const outerFn = function() {
+//   let x = 0;
+
+//   const innerFn = function() {
+//     console.log(XMLHttpRequest);
+//   }
+//   return innerFn;
+// }
+
+// console.log(outerFn);
+
+// const fn = outerFn();
+
+// console.log(fn);
+
+
+//////////
+
+// const EmotionCounter = function () {
+//   let counter = 0;
+
+//   return function() {
+//     counter = counter + 1;
+//     console.log(counter);
+//   }
+// }
+
+
+// const Like = EmotionCounter();
+// Like();
+// Like();
+// Like();
+
+// const DisLike = EmotionCounter();
+// DisLike();
+// DisLike();
+
+// ============= Рекурсія 
+
+// const numbers = [1, [2, 3], 4, [5, 6]];
+
+
+// const fnSum = function (arr) {
+//   let sum;
+//   let newArr = [];
+//   for (let el of arr) {
+//     if(Array.isArray(el)) {
+//       for (let x of el) {
+//         newArr.push(x);
+//       }
+//     } else {
+//       newArr.push(el);
+//     }
+//   }
+//   return newArr;
+// }
+// console.log(fnSum(numbers));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const flatten = function self (arr) {
+//   const flatArr = [];
+
+//   for (let element of numbers) {
+//     const isArray = Array.isArray(element);
+
+//     if(isArray) {
+//       for (let x of element) {
+//         flatArr.push(x);
+//       }
+//     } else {
+//       flatArr.push(element)
+//     }
+//   }
+//   return flatArr;
+// }
+
+// const fn = flatten;
+
+// console.log(fn());
+
+
+// ===
+
+// const numbers = [1, [2, [3]], 4, [5, [6, [7, 8]]]];
+
+// const fnSum = function self (arr) {
+//   let newArr = [];
+
+//   for(let element of arr) { 
+//     console.log(newArr);
+//     const isArray = Array.isArray(element)
+//     if(isArray) {
+//       newArr = newArr.concat(self(element))
+//     } else {
+//       newArr.push(element)
+//     }
+//   }
+//   return newArr;
+// }
+// console.log(fnSum(numbers));
+
+
+
+
+// const flatten = function self (arr) {
+  // console.log(arr);
+//   let flatArr = [];
+
+//   for (let element of arr) {
+//     const isArray = Array.isArray(element);
+
+//     if(isArray) {
+//       flatArr = flatArr.concat(self(element))
+//     } else {
+//       flatArr.push(element)
+//     }
+//   }
+
+//   return flatArr;
+// }
+
+// const flat = flatten(numbers);
+
+// console.log(flat);
