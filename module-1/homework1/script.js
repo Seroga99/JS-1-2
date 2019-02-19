@@ -1,3 +1,4 @@
+"use strict";
 const adminLogin = 'admin';
 const adminPassword = 'm4ngo1zh4ackz0r';
 const checkLogin = prompt('Please enter login');
@@ -16,3 +17,8 @@ if (checkLogin === null){
         alert('Incorrect password') 
     }
 }   
+
+
+
+
+
