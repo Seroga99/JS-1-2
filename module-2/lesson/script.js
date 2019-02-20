@@ -375,3 +375,88 @@
 // }
 // console.log(sum);
 
+
+
+
+
+// let a = [1,1];
+// let chyslo;
+// let b = +prompt('Enter a number pls');
+// for(let i = 0; i < (b-2) ; i += 1){
+//   chyslo = a[a.length-1] + a[a.length-2]
+//   a.push(chyslo);
+// }
+// if(b === 1){
+//     a.pop();
+//     alert(a);
+// }
+// else if(b === 0){
+//     a.pop();
+//     a.pop();
+// }
+// else if(b<1 && b!==0){
+
+// }
+// else{
+//     alert(a);
+// }
+
+
+
+// let prmpt = +prompt('Ввведіть число');
+// let fib = (max) => {
+//   let fibNum = 1;
+//   let first = 0;
+//   let second = 1;
+//   let arr = [];
+//   do {
+//     arr.push(fibNum);
+//     fibNum = first + second;
+//     first = second;
+//     second = fibNum;
+//   } while (fibNum <= max);
+
+//   console.log(arr);
+//   return;
+// }
+
+
+// fib(prmpt);
+
+
+
+/*
+  Напишите цикл, который предлагает, через prompt, ввести число больше 100. 
+  
+   Если посетитель ввёл другое число или нажал Cancel – попросить ввести ещё раз, 
+   и так далее, пока не введет число больше 100.
+  
+  Предполагается, что посетитель вводит только числа, обрабатывать невалидный ввод 
+  вроде строк 'qweqwe' в этой задаче необязательно.
+  
+  PS: используйте цикл do...while
+*/
+
+// let userInput;
+
+// do {
+//   userInput = +prompt('Enter some number')
+// } while (userInput < 100)
+
+
+
+let userInput;
+const numbers = [];
+let total = 0;
+
+
+do {
+  userInput = prompt('Enter some number');
+  numbers.push(userInput);
+} while( userInput !== null)
+numbers.pop();
+console.log(numbers);
+for(let el of numbers) {
+  total = total + +el;
+}
+console.log(total);
