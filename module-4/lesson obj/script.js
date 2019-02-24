@@ -2,20 +2,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // let arr = [1, 2, 4, 6];
 
 // arr.Dan = 'Hello, I\'m Dan';
@@ -233,14 +219,198 @@
 //     lorence: 99
 //   };
   
-//   whoIsTheBest = (obj) => {
-//     const value = Object.values(obj);
-//     const keys = Object.keys(obj);
-//     const maxValue = Math.max(...value); 
-//     let key = value.indexOf(maxValue);
-//     console.log(`${keys[key]}: ${maxValue}`);
-//   }
+  // whoIsTheBest = (obj) => {
+  //   const value = Object.values(obj);
+  //   const keys = Object.keys(obj);
+  //   const maxValue = Math.max(...value); 
+  //   let key = value.indexOf(maxValue);
+  //   console.log(`${keys[key]}: ${maxValue}`);
+  // }
+  // console.log(whoIsTheBest);
   
 //   whoIsTheBest(tasksCompleted);
 
+
+
+
+// 23/02/2019 //////////////////////////////////////////////////////////////////////////// 
+
+
+
+
+
+
+
+
+// const user = {
+//   name: 'Donald',
+//   skills: ['English', 'HTML', 'CSS'],
+//   addSkills(skill) {
+//     user.skills.push(skill)
+//   },
+// }
+// console.log(user);
+// user.addSkills('JS');
+// console.log(user);
+
+
+// const shop = {
+//   phones: [
+//     { name: 'IPhone X', price: 800, amount: 15, },
+//     { name: 'Nokia', price: 230, amount: 4, },
+//     { name: 'Sony', price: 300, amount: 3, }
+//   ],
+//   deleteProduct(productName, num) {
+//     for (const el of shop.phones) {
+//       if(el.name === productName) {
+//         el.amount = el.amount - num
+//       }
+//     } 
+//   }
+// }
+// console.log(shop);
+// shop.deleteProduct('Sony', 2)
+// console.log(shop);
+
+
+///////////
+
+
+
+
+
+////////////////////////
+
+
+
+// const eloctronic = {
+//   phones: [
+//     {
+//       name: 'IPhone X',
+//       price: 800,
+//       amount: 15,
+//     },
+//     {
+//       name: 'Nokia',
+//       price: 230,
+//       amount: 4,
+//     },
+//     {
+//       name: 'Sony',
+//       price: 300,
+//       amount: 3,
+//     }
+//   ],
+//   addProduct(product){
+//     this.phones.push(product);
+//   },
+//   getProductInfo(product) {
+//     for (const el of this.phones) {
+//       if(el.name === product) {
+//         return el
+//       }
+//     }
+//   },
+//   deleteProduct(productName, num) {
+//     for (const el of this.phones) {
+//       if(el.name === productName) {
+//         el.amount = el.amount - num;
+//       }
+//     }
+//     const phoneName = this.getProductInfo(productName);
+//     this.amount -= num;
+
+//   },
+// }
+
+// const productSimems = {
+//   name: 'Simems',
+//   price: 40,
+//   amount: 10,
+// }
+
+// eloctronic.addProduct(productSimems);
+// console.log(eloctronic);
+
+// const info = eloctronic.getProductInfo('Sony');
+// console.log(info);
+
+// eloctronic.deleteProduct('IPhone X', 2);
+// console.log(eloctronic);
+
+//////////// Деструктуризація 
+
+// const productSimems = {
+//   name: 'Simems',
+//   price: 40,
+//   amount: 10,
+// }
+
+// const {name, amount} = productSimems;
+// console.log(name);
+// console.log(amount);
+
+
+
+// const showName = function() {
+//   return console.log('In showName: ', this.name);
+// } 
+
+// const user = { 
+//   name: 'Mango' 
+// };
+// user.show = showName;
+
+// user.show();
+
+
+const greet = function () {
+  return `Wellcome to ${this.name}!`;
+};
+
+// объект
+// const hotel1 = { name: "Resort Hotel", };
+// const hotel2 = { name: "Qw Hotel" };
+// const hotel3 = { name: "ER Hotel" };
+// const hotel4 = { name: "TY Hotel" };
+
+
+// // присвоение объекту метода
+// const arr = [10, 40, 20, 45];
+
+// console.log(greet.call(hotel1, 10, 20 , 40));
+// console.log(greet.apply(hotel2, [...arr]));
+// console.log(greet.call(hotel3));
+// console.log(greet.call(hotel4));
+
+
+
+// hotel1.wellcome = greet;
+// hotel2.wellcome = greet;
+// hotel3.wellcome = greet;
+// hotel.wellcome = greet;
+
+// console.log(hotel1.wellcome());
+// console.log(hotel2.wellcome());
+// console.log(hotel3.wellcome());
+// console.log(hotel4.wellcome());
+
+/*  
+  Создайте функцию isObjectEmpty(obj), которая получает 
+  один аргумент obj - объект, и проверяет пуст ли он (есть ли в нем свойства).
+  Возвращает true если объект пустой, false если не пустой.
+*/
+
+const isObjectEmpty = (obj) => !!!Object.keys(obj).length;
+
+// Вызовы функции для проверки
+console.log(
+  isObjectEmpty({})
+); // true
+console.log(
+  isObjectEmpty({a: 1})
+); // false
+console.log(
+  isObjectEmpty({a: 1, b: 2})
+); // false
 

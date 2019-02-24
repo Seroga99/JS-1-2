@@ -444,19 +444,3 @@
 // } while (userInput < 100)
 
 
-
-let userInput;
-const numbers = [];
-let total = 0;
-
-
-do {
-  userInput = prompt('Enter some number');
-  numbers.push(userInput);
-} while( userInput !== null)
-numbers.pop();
-console.log(numbers);
-for(let el of numbers) {
-  total = total + +el;
-}
-console.log(total);
