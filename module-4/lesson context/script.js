@@ -46,14 +46,124 @@
 
 
 //////
-const obj = {
-    param: 'obj param',
-    showThis() {
-        console.log(this);
+// const obj = {
+//     param: 'obj param',
+//     showThis() {
+//         console.log(this);
+//     }
+// }
+
+// const fn = function(callback) {
+//     return callback();
+// }
+// const a = fn(obj.showThis);
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// function UserCreate({name, surname, age}) {
+//     this.name = name,
+//     this.surname = surname
+
+// }
+
+// const user2 = new UserCreate('Barak', 'Obama', 46, false);
+
+// const user1 = new UserCreate({
+//     name: 'Donald',
+//     surname: 'Tramp',
+//     age: 72,
+// })
+// console.log(user1);
+// console.log('user 1: ', user1);
+// console.log('user 2: ', user2);
+
+
+/*  
+  Напишите код, который бы  с помощью 
+  функции-конструкора User, позволял создавать 
+  объекты пользователя со следующим свойствами:
+    - name - строка (имя)
+    - isActive - буль (активен)
+    - age - число (возраст)
+    - friends - число (кол-во друзей)
+
+  Имя, активность, возраст и друзей, необходимо передать 
+  как аргументы при вызове конструктора.
+  
+  Добавить метод getUserInfo(), которая, выводит строку:
+  `User ${имя} is ${возраст} years old and has ${кол-во друщзей} friends`
+
+  Создать несколько объектов пользователя User и с помощью 
+  функции getUserInfo вывести строку в консоль.
+*/
+
+
+function UserCreate (name, isActive, age, friends) {
+    this.name = name;
+    this.isActive = isActive;
+    this.age = age;
+    this.friends = friends;
+    this.getUserInfo = function() {
+        return `User ${this.name} is ${this.age} years old and has ${this.friends} friends`
     }
 }
 
-const fn = function(callback) {
-    return callback();
-}
-const a = fn(obj.showThis);
+const Tramp = new UserCreate('Danald', true, 72, 1);
+console.log(Tramp.getUserInfo());
+
+
+
+
+
+
+
+
+// function Shop({ phonesArr = [] }) {
+//     this.phones = phonesArr;
+
+//     this.addPhone = function (phone) {
+//         this.phonesArr.push(phone);
+//     };
+//     this.findPhone = function (phoneName) {
+//         for(const el of this.phones) {
+//             if (el.name = phoneName) {
+//                 return el;
+//             }
+//         }
+//     };
+//     this.addPhoneAmount = function (phone, num) {
+//         console.log(`Adding ${num} ${phone}`);
+
+//         const product = this.findPhone(phone);
+//         product.amount += num;
+//     };
+//     this.substractPhoneAmount = function (phone, num) {
+//         console.log(`Adding ${num} ${phone}`);
+
+//         const product = this.findPhone(phone);
+//         product.amount -= num;
+//     };
+//     this.getAllPhones = function() {
+//         return this.phones;
+//     }
+
+// }
+
+// const phonesArr = [
+//     { name: 'IPhone', amount: 10, price: 700 }, 
+//     { name: 'Sony', amount: 6, price: 240 }, 
+//     { name: 'Xiaomi', amount: 14, price: 180 }, 
+// ];
+
+// const shopA = new Shop({phonesArr});
+
+
+
+
+
+

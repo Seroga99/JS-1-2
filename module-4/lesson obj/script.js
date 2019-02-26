@@ -364,9 +364,9 @@
 // user.show();
 
 
-const greet = function () {
-  return `Wellcome to ${this.name}!`;
-};
+// const greet = function () {
+//   return `Wellcome to ${this.name}!`;
+// };
 
 // объект
 // const hotel1 = { name: "Resort Hotel", };
@@ -401,16 +401,16 @@ const greet = function () {
   Возвращает true если объект пустой, false если не пустой.
 */
 
-const isObjectEmpty = (obj) => !!!Object.keys(obj).length;
+// const isObjectEmpty = (obj) => !!!Object.keys(obj).length;
 
-// Вызовы функции для проверки
-console.log(
-  isObjectEmpty({})
-); // true
-console.log(
-  isObjectEmpty({a: 1})
-); // false
-console.log(
-  isObjectEmpty({a: 1, b: 2})
-); // false
+// // Вызовы функции для проверки
+// console.log(
+//   isObjectEmpty({})
+// ); // true
+// console.log(
+//   isObjectEmpty({a: 1})
+// ); // false
+// console.log(
+//   isObjectEmpty({a: 1, b: 2})
+// ); // false
 
