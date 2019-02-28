@@ -103,18 +103,18 @@
 */
 
 
-function UserCreate (name, isActive, age, friends) {
-    this.name = name;
-    this.isActive = isActive;
-    this.age = age;
-    this.friends = friends;
-    this.getUserInfo = function() {
-        return `User ${this.name} is ${this.age} years old and has ${this.friends} friends`
-    }
-}
+// function UserCreate (name, isActive, age, friends) {
+//     this.name = name;
+//     this.isActive = isActive;
+//     this.age = age;
+//     this.friends = friends;
+//     this.getUserInfo = function() {
+//         return `User ${this.name} is ${this.age} years old and has ${this.friends} friends`
+//     }
+// }
 
-const Tramp = new UserCreate('Danald', true, 72, 1);
-console.log(Tramp.getUserInfo());
+// const Tramp = new UserCreate('Danald', true, 72, 1);
+// console.log(Tramp.getUserInfo());
 
 
 
@@ -163,7 +163,67 @@ console.log(Tramp.getUserInfo());
 // const shopA = new Shop({phonesArr});
 
 
+// const productArr = [
+//     { name: 'apples', amount: 200, price: 20 }, 
+//     { name: 'bananas', amount: 350, price: 40 }, 
+//     { name: 'pineapples', amount: 140, price: 80 }, 
+// ];
+// function CreateShop(name, products) {
+//     this.name = name;
+//     this.productArr = products;
+//     this.getProductInfo = function(productName) {
+//         for (const el of products) {
+//             if (el.name === productName) {
+//                 return el;
+//             }
+//         }
+//     };
+//     this.addProduct = function (productName , num) {
+//         const product =  this.getProductInfo(productName)
+//         return product.amount += num;
+//     }
+
+// }
+
+// const ATB = new CreateShop ('ATB', productArr);
+// console.log(ATB);
+// console.log(ATB.getProductInfo('bananas'));
+// ATB.addProduct('pineapples', 60);
+// console.log(ATB);
+
+// const Silpo = new CreateShop ('Silpo', [...productArr]);
+// console.log(Silpo);
+
+// const ATB = {
+//     name: 'ATB',
+//     productArr: [],
+//     addProduct() {
+//     },
+//     deleteProduct() {
+//     },
+//     getProductInfo() {
+//     },
+// }
 
 
 
 
+
+/*  
+  Напишите код, который бы  с помощью 
+  функции-конструкора User, позволял создавать 
+  объекты пользователя со следующим свойствами:
+    - name - строка (имя)
+    - isActive - буль (активен)
+    - age - число (возраст)
+    - friends - число (кол-во друзей)
+
+  Имя, активность, возраст и друзей, необходимо передать 
+  как аргументы при вызове конструктора.
+
+  Добавить метод getUserInfo(), которая, выводит строку:
+  `User ${имя} is ${возраст} years old and has ${кол-во друщзей} friends`
+
+  Создать несколько объектов пользователя User и с помощью 
+  функции getUserInfo вывести строку в консоль.
+*/
