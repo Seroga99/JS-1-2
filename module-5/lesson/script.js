@@ -57,19 +57,21 @@
     Функция summAllNumbers принимает любое число аргументов.
     Возвращает число - сумму всех аргументов.
   */
-//   function summAllNumbers(...args) {
-//     let accumulator = 0;
+  // function summAllNumbers(...args) {
+  //   let accumulator = 0;
   
-//     for (let i = 0, max = args.length; i < max; i += 1) {
-//       accumulator += args[i];
-//     }
+  //   for (let i = 0, max = args.length; i < max; i += 1) {
+  //     accumulator += args[i];
+  //   }
   
-//     return accumulator;
-//   }
+  //   return accumulator;
+  // }
+
+  // const summAllNumbers = (...args) => args.reduce( (acc, el) => acc += el )
   
-//   console.log( summAllNumbers(1, 2, 3) ); // 6
-//   console.log( summAllNumbers(1, 2, 3, 4) ); // 10
-//   console.log( summAllNumbers(1, 2, 3, 4, 5) ); // 15
+  // console.log( summAllNumbers(1, 2, 3) ); // 6
+  // console.log( summAllNumbers(1, 2, 3, 4) ); // 10
+  // console.log( summAllNumbers(1, 2, 3, 4, 5) ); // 15
   
   /* 
     Функция findEvery получает два аргумента - число и массив.
@@ -111,15 +113,133 @@
 //   console.log( getPropValues(guests, "isActive") ); // [true, false, true, false]
   
 
-const tweets = [
-    { id: "1", likes: 5, tags: ["js", "nodejs"] },
-    { id: "2", likes: 2, tags: ["html", "css"] },
-    { id: "3", likes: 17, tags: ["html", "js", "nodejs"] },
-    { id: "4", likes: 8, tags: ["css", "react"] },
-    { id: "5", likes: 0, tags: ["js", "nodejs", "react"] },
-  ];
-const tweetsLikes = tweets
-    .filter(el => el.id >= 2 && el.id <= 4)
-    .reduce((acc, el) => acc += el.likes, 0);
+// const tweets = [
+//     { id: "1", likes: 5, tags: ["js", "nodejs"] },
+//     { id: "2", likes: 2, tags: ["html", "css"] },
+//     { id: "3", likes: 17, tags: ["html", "js", "nodejs"] },
+//     { id: "4", likes: 8, tags: ["css", "react"] },
+//     { id: "5", likes: 0, tags: ["js", "nodejs", "react"] },
+//   ];
+// const tweetsLikes = tweets
+//     .filter(el => el.id >= 2 && el.id <= 4)
+//     .reduce((acc, el) => acc += el.likes, 0);
 
-console.log(tweetsLikes);
+// console.log(tweetsLikes);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*      
+  Напиши функцию setGuestState(guests, period), где
+  guests - массив гостей, period - кол-во дней после
+  которого считается что гость не активен.
+    
+  Если значение поля inactiveDays болше чем period, 
+  поставить для isActive значение false.
+    
+  Если же значение inactiveDays меньше чем period,
+  поставить для isActive значение true
+  
+  PS: обязательно используй перебирающие методы массивов, никаких for!
+*/
+
+// const users = [
+//   { name: 'Mango', inactiveDays: 15, isActive: true },
+//   { name: 'Poly', inactiveDays: 8, isActive: false },
+//   { name: 'Ajax', inactiveDays: 32, isActive: false },
+//   { name: 'Chelsey', inactiveDays: 85, isActive: true }
+// ];
+
+
+// // Вызовы функции для проверки
+// console.log(
+//   setGuestState(users, 10)
+// ); // Объекты Mango, Ajax, Chelsey получат isActive false, а Poly наоборот true
+
+// console.log(
+//   setGuestState(users, 20)
+// ); // Объекты Ajax, Chelsey получат isActive false, а Mango и Poly наоборот true
+
+// console.log(
+//   setGuestState(users, 50)
+// ); // Объект Chelsey получит isActive false, а Mango, Poly и Ajax наоборот true
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// let friends = [{
+//   name: 'Anna',
+//   books: ['Bible', 'Harry Potter'],
+//   age: 21
+// }, {
+//   name: 'Bob',
+//   books: ['War and peace', 'Romeo and Juliet'],
+//   age: 26
+// }, {
+//   name: 'Alice',
+//   books: ['The Lord of the Rings', 'The Shining'],
+//   age: 18
+// }];
+
+// // allbooks - list which will contain all friends' books +  
+// // additional list contained in initialValue
+// let allbooks = friends.reduce(function(accumulator, currentValue) {
+//   return [...accumulator, ...currentValue.books];
+// }, []);
+
+// console.log(allbooks);
+// // allbooks = [
+// //   'Alphabet', 'Bible', 'Harry Potter', 'War and peace', 
+// //   'Romeo and Juliet', 'The Lord of the Rings',
+// //   'The Shining'
+// // ]
+
+
+
+////////////////////////////////////////////////////////////////////////
+
+
+// var myArray = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+// var myOrderedArray = myArray.reduce( (accumulator, currentValue) => {
+//   if (accumulator.indexOf(currentValue) === -1) {
+//     accumulator.push(currentValue);
+//   }
+//   return accumulator
+// }, [])
+
+// console.log(myOrderedArray);
+
+
+//////////////////////////////////////////////////////////
+
+
+/*  
+  Напиши фукнцию findLongestWord(str), которая принимает 
+  параметром произвольную строку и возвращает самое длинное слово в этой строке.   
+  
+  Важное условие - в строке могут быть только пробелы, символы букв и цифр!
+*/
+
+// const findLongestWord = str => {
+//   let arr = str.split(' ');
+//   let theLongestWord = arr[0];
+//   for (const el of arr) {
+//     if(theLongestWord.length < el.length) {
+//       theLongestWord = el;
+//     }
+//   }
+//   return theLongestWord;
+// }
+
+// // Вызовы функции для проверки
+// console.log(
+//   findLongestWord("The quick brown fox jumped over the lazy dog")
+// ); // 'jumped'
+
+
+
+
+
+
+
+
+
