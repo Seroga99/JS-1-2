@@ -217,7 +217,47 @@
 
 //////////////////////class/////////////////////////////////class//////////////////////////////////////////////
 
+// function GuestA (name, days, roomNumber) {
+//   this.name = name;
+//   this.days = days;
+//   this.roomNumber = roomNumber;
+// }
+// GuestA.prototype.getFullInfo = function() {
+//   console.log(`
+//   Guest ${this.name}
+//   Will stay for ${this.days} more days
+//   In room number ${this.roomNumber}
+// `);
+// }
+// const a = new GuestA('Mango', 7, 26);
+// console.log(a);
 
+// class Guest {
+//   // аналог функции-конструктора
+//   constructor (name, days, roomNumber) {
+//     this.name = name;
+//     this.days = days;
+//     this.roomNumber = roomNumber;
+//   }
+
+//   // аналог Guest.prototype.getFullInfo 
+//   getFullInfo () {
+//     console.log(`
+//       Guest ${this.name}
+//       Will stay for ${this.days} more days
+//       In room number ${this.roomNumber}
+//     `);
+//   }
+// }
+// const mango = new Guest('Mango', 7, 26);
+
+// console.log(mango);
+// mango.getFullInfo();
+// // Guest Mango
+// // Will stay for 7 more days
+// // In room number 26
+// console.log(mango instanceof Guest); // true
+// console.log(mango instanceof Object); // true
 
 
 
