@@ -237,9 +237,66 @@
 
 
 
+// const arr = [1, 2, 3, 4, 5]
+
+// // для каждого элемента массива запустить функцию,
+// // промежуточный результат передавать первым аргументом далее
+
+// const result = arr.reduce((sum, current) => sum + current);
+
+// alert( result ); // 15
+
+
+// const arr1 = [ 1, 2, 3, 4, 5 ];
+
+// const getSums = arr => {
+//   let res = [];
+//   arr.reduce((acc, el) => {
+//     res.push(acc + el)
+//     return acc + el
+//   }, 0)
+//   return res;
+// }
+// console.log(getSums(arr1));
+
+// для arr = [ 1, 2, 3, 4, 5 ]
+// getSums( arr ) = [ 1, 1+2, 1+2+3, 1+2+3+4, 1+2+3+4+5 ] = [ 1, 3, 6, 10, 15 ]
 
 
 
+/*      
+  Напиши функцию setGuestState(guests, period), где
+  guests - массив гостей, period - кол-во дней после
+  которого считается что гость не активен.
+    
+  Если значение поля inactiveDays болше чем period, 
+  поставить для isActive значение false.
+    
+  Если же значение inactiveDays меньше чем period,
+  поставить для isActive значение true
+  
+  PS: обязательно используй перебирающие методы массивов, никаких for!
+*/
+
+const guests = [
+  { name: 'Mango', inactiveDays: 15, isActive: true },
+  { name: 'Poly', inactiveDays: 8, isActive: false },
+  { name: 'Ajax', inactiveDays: 32, isActive: false },
+  { name: 'Chelsey', inactiveDays: 85, isActive: true }
+];
+
+// Вызовы функции для проверки
+console.log(
+  setGuestState(users, 10)
+); // Объекты Mango, Ajax, Chelsey получат isActive false, а Poly наоборот true
+
+console.log(
+  setGuestState(users, 20)
+); // Объекты Ajax, Chelsey получат isActive false, а Mango и Poly наоборот true
+
+console.log(
+  setGuestState(users, 50)
+); // Объект Chelsey получит isActive false, а Mango, Poly и Ajax наоборот true
 
 
 
