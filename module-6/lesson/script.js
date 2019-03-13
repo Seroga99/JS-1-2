@@ -260,4 +260,88 @@
 // console.log(mango instanceof Object); // true
 
 
+// function AnimailCreate(name, isEat = true) {
+//   this.name = name;
+//   this.isEat = isEat;
+// }
+
+// AnimailCreate.prototype.runs = function() {
+//   console.log(`${this.name} can run`);
+// }
+// AnimailCreate.prototype.isHappy = function() {
+//   console.log(`${this.name} is happy`);
+// }
+// AnimailCreate.prototype.isNotHappy = function() {
+//   console.log(`${this.name} isn't happy`);
+// }
+
+// const dog = new AnimailCreate('Bob');
+// const cat = new AnimailCreate('Alina');
+
+// console.log(dog);
+// console.log(cat);
+// cat.isHappy();
+
+
+// class AnimailCreate {
+//   constructor(name, isEat = true) {
+//     this.name = name;
+//     this.isEat = isEat;
+//   }
+//   static runs() {
+//     console.log(`${this.name} can run`);
+//   }
+//   isHappy() {
+//     console.log(`${this.name} is happy`);
+//     this.runs()
+//   }
+// }
+
+// const dog = new AnimailCreate('Bob');
+
+
+// console.log(dog);
+// dog.isHappy()
+
+
+
+/*
+  Напиши ES6 класс StringBuilder.
+  На вход (в конструкторе) он получает один параметр string - строку,
+  которую записывает в свойство _value.
+  Добавь классу следующие методы:
+    - геттер value - возвращает текущее значение поля _value
+    - append(str) - получает парметр str (строку) и добавляет ее в конец _value
+    - prepend(str) - получает парметр str (строку) и добавляет ее в начало value
+    - pad(str) - получает парметр str (строку) и добавляет ее в начало и в конец _value
+*/
+
+// class StringBuilder {
+//   constructor(string) {
+//     this._value = string
+//   }
+//   get value() {
+//     return this._value
+//   }
+//   append(str) {
+//     this._value = this._value + str
+//   }
+//   prepend(str) {
+//     this._value = str + this._value
+//   }
+//   pad(str) {
+//     this._value = str + this._value + str
+//   }
+// }
+
+// const builder = new StringBuilder('.');
+
+// builder.append('^'); 
+// console.log(builder.value); // '.^'
+
+// builder.prepend('^'); 
+// console.log(builder.value); // '^.^'
+
+// builder.pad('='); 
+// console.log(builder.value); // '=^.^='
 
