@@ -1,117 +1,67 @@
 "use strict"
-// const jumbotron = document.querySelector('.jumbotron');
+const jumbotron = document.querySelector('.jumbotron');
 
 
 
 
 
+// create
+const titleContainer = document.createElement('div');   
+const mainTitle = document.createElement('h1');
+const redText = document.createElement('span');
+
+const listContainer = document.createElement('div');
+const list = document.createElement('ul');
+
+
+// add class
+titleContainer.classList.add('row', 'title-container');
+mainTitle.classList.add('text-center');
+redText.classList.add('red-text');
+
+listContainer.classList.add('row', 'list-container')
 
 
 
+// add attr
+
+
+//add text
+mainTitle.textContent = 'TRIBUTE PAGE';
+redText.textContent = 'DEADPOOL';
+
+// append
+jumbotron.append(titleContainer);
+titleContainer.append(mainTitle);
+mainTitle.append(redText);
+
+jumbotron.append(listContainer);
+listContainer.append(list);
+console.log(jumbotron);
 
 
 
+const spanArr = ['SOME YEAR', 'SOME OTHER YEAR', 'SOME OTHER DIFERENT YEAR', 'YET ANOTHER YEAR', 'YESTERDAY?', 'NO...', 'WHO CARES?', 'DUNNO', 'MEEH', '????', '@$%^#'];
+const liArr = ['- BORN IN CANADA AS WADE WILSON.', '- HIS MOTHER DIED OF CANCER WHILE HE WAS YOUNG AND HIS FATHER (WHO WAS IN THE MILITARY) WAS PHYSICALLY ABUSIVE.', '- WADE BEGAN HIS MERCENARY CAREER WHILE STILL IN HIS LATE TEENS.', '- IN AMERICA, HE MET AND FELL IN LOVE WITH TEENAGE PROSTITUTE VANESSA CARLYSLE, WITH WHOM HE SHARED DREAMS OF A BETTER LIFE.', '- LEARNING THAT HE HAD CONTRACTED CANCER, WILSON BROKE UP WITH VANESSA RATHER THAN FORCE HER TO REMAIN WITH A TERMINALLY ILL MAN.', '- IN PURSUE OF HOPE FOR HIS TERMINAL CONDITION, HE JOINS THE WEAPON X PROGRAM', '- HIS CANCER WAS TEMPORARILY ARRESTED VIA THE IMPLANTATION OF A HEALING FACTOR DERIVED FROM WOLVERINE', '- DURING ONE MISSION, WILSON KILLED HIS TEAMMATE SLAYBACK. AS A RESULT, HE WAS REJECTED FROM THE WEAPON X PROGRAM AND SENT TO THE HOSPICE, ALLEGEDLY A GOVERNMENT FACILITY WHERE FAILED SUPERHUMAN OPERATIVES WERE TREATED.', '- IN THE HOSPICE HE WAS TORTURED BY THE DOCTOR KILLEBREW AND HIS SADISTIC ASSISTANT AJAX, WHO TORE OUT WILSON’S HEART AND LEFT HIM FOR DEAD', '- FOLLOWING HIS ESCAPE HE SOON RETURNED TO HIS FREELANCE MERCENARY ACTIVITIES, DONNING A COSTUME IN KEEPING WITH HIS NEW IDENTITY, DEADPOOL', '- WHY DO YOU KEEP READING, THIS IS SO BORING...'];
 
+const fnCreateLi = function(textLiArr, textSpanArr) {
+    for(let i=0; i<textLiArr.length; i++) {
+        let listItem = document.createElement('li');
+        let textInitem = document.createElement('span');
 
+        listItem.classList.add('list-item');
+        textInitem.classList.add('red-text');
 
+        listItem.textContent = textLiArr[i];
+        textInitem.textContent = textSpanArr[i];
 
+        list.append(listItem);
+        listItem.prepend(textInitem);
+    }
+}
+const listItems = fnCreateLi(liArr, spanArr);
+console.log(listItems);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// //create
-// const titleContainer = document.createElement('div');
-// const h1 = document.createElement('h1');
-// const deadpoolSpan = document.createElement('span');
-// const deadpoolP = document.createElement('p');
-// const deadpoolPSpan = document.createElement('span');
-// const imgContainer = document.createElement('div');
-// const imgContainerImg = document.createElement('img');
-// const subTitleContainer = document.createElement('div');
-// // const subTitleContainerH1 = document.createElement('h1');
-//
-//
-//
-// //add class
-// titleContainer.classList.add('row', 'title-container');
-// h1.classList.add('text-center');
-// deadpoolSpan.classList.add('red-text');
-// deadpoolP.classList.add('text-center');
-// deadpoolPSpan.classList.add('red-text');
-// imgContainer.classList.add('row');
-// imgContainerImg.classList.add('img-responsive', 'inside-shadow');
-// subTitleContainer.classList.add('row', 'sub-title-container');
-// // subTitleContainerH1.classList.add('text-center');
-//
-// //clone
-// const  cloneH1 = h1.cloneNode(false);
-//
-// //add text
-// h1.textContent = 'TRIBUTE PAGE';
-// deadpoolSpan.textContent = 'DEADPOOL';
-// deadpoolP.textContent = 'WITH GREAT POWER COMES GREAT';
-// deadpoolPSpan.textContent = 'IRRESPONSIBILITY';
-// cloneH1.textContent = 'TIMELINE';
-//
-//
-//
-// //add attr
-// imgContainer.setAttribute('id', 'main-image-container');
-// imgContainerImg.setAttribute('src', 'http://s3.foxfilm.com/foxmovies/production/films/103/images/gallery/deadpool1-gallery-image.jpg');
-//
-//
-//
-//
-// // paste
-// jumbotron.append(titleContainer);
-// titleContainer.append(h1);
-// h1.prepend(deadpoolSpan);
-// titleContainer.append(deadpoolP);
-// deadpoolP.append(deadpoolPSpan);
-// jumbotron.append(imgContainer);
-// imgContainer.append(imgContainerImg);
-// jumbotron.append(subTitleContainer);
-// subTitleContainer.append(cloneH1);
 
 
 
@@ -149,14 +99,22 @@
 
 
 
-// const spanArr = ['SOME YEAR', 'SOME OTHER YEAR', 'SOME OTHER DIFERENT YEAR', 'YET ANOTHER YEAR', 'YESTERDAY?', 'NO...', 'WHO CARES?', 'DUNNO', 'MEEH', '????', '@$%^#'];
 
-// const liArr = ['- BORN IN CANADA AS WADE WILSON.', '- HIS MOTHER DIED OF CANCER WHILE HE WAS YOUNG AND HIS FATHER (WHO WAS IN THE MILITARY) WAS PHYSICALLY ABUSIVE.', '- WADE BEGAN HIS MERCENARY CAREER WHILE STILL IN HIS LATE TEENS.', '- IN AMERICA, HE MET AND FELL IN LOVE WITH TEENAGE PROSTITUTE VANESSA CARLYSLE, WITH WHOM HE SHARED DREAMS OF A BETTER LIFE.', '- LEARNING THAT HE HAD CONTRACTED CANCER, WILSON BROKE UP WITH VANESSA RATHER THAN FORCE HER TO REMAIN WITH A TERMINALLY ILL MAN.', '- IN PURSUE OF HOPE FOR HIS TERMINAL CONDITION, HE JOINS THE WEAPON X PROGRAM', '- HIS CANCER WAS TEMPORARILY ARRESTED VIA THE IMPLANTATION OF A HEALING FACTOR DERIVED FROM WOLVERINE', '- DURING ONE MISSION, WILSON KILLED HIS TEAMMATE SLAYBACK. AS A RESULT, HE WAS REJECTED FROM THE WEAPON X PROGRAM AND SENT TO THE HOSPICE, ALLEGEDLY A GOVERNMENT FACILITY WHERE FAILED SUPERHUMAN OPERATIVES WERE TREATED.', '- IN THE HOSPICE HE WAS TORTURED BY THE DOCTOR KILLEBREW AND HIS SADISTIC ASSISTANT AJAX, WHO TORE OUT WILSON’S HEART AND LEFT HIM FOR DEAD', '- FOLLOWING HIS ESCAPE HE SOON RETURNED TO HIS FREELANCE MERCENARY ACTIVITIES, DONNING A COSTUME IN KEEPING WITH HIS NEW IDENTITY, DEADPOOL', '- WHY DO YOU KEEP READING, THIS IS SO BORING...'];
 
-// for (let i = 0; i < spanArr.length; i++) {
-//     let ulLi = createNode('li', ['list-item'], null, liArr[i], titleUl, 'append');
-//     let ulLiSopan = createNode('span', ['red-text'], null, spanArr[i], ulLi, 'prepend');
-// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
