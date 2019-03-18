@@ -46,14 +46,37 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-let text = document.createElement('p');
-text.textContent = 'I am text'
-let image = document.createElement('img');
-image.setAttribute('src', 'http://www.imgworlds.com/wp-content/uploads/2015/12/18-CONTACTUS-HEADER.jpg');
-image.setAttribute('alt', 'photo1')
-console.log(image);
+// let text = document.createElement('p');
+// text.textContent = 'I am text'
+// let image = document.createElement('img');
+// image.setAttribute('src', 'http://www.imgworlds.com/wp-content/uploads/2015/12/18-CONTACTUS-HEADER.jpg');
+// image.setAttribute('alt', 'photo1')
+// console.log(image);
 
 
-let body = document.querySelector('body');
-body.prepend(image);
-console.log(body);
+// let body = document.querySelector('body');
+// body.prepend(image);
+// console.log(body);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
