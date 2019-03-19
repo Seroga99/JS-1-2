@@ -30,7 +30,7 @@ const posts = [
       title: "Post title 3",
       text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, nemo dignissimos ea temporibus voluptatem maiores maxime consequatur impedit nobis sunt similique voluptas accusamus consequuntur, qui modi nesciunt veritatis distinctio rem!",
       link: 'link-3.com'
-    }
+    },
   ];
 
 
