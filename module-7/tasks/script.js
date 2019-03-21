@@ -280,5 +280,5 @@ const createBoxes = num => {
     }
     container.append(...arrBoxes)
 }
-createBoxes(10);
+createBoxes(100);
 
