@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 // const btn = document.querySelector('.js-btn')
 
@@ -119,33 +119,64 @@
 //   return item
 // }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.querySelector('form')
-  const btnSubmit = document.querySelector('.js-btn-submit')
-  const list = document.querySelector('.js-list')
-  const input = document.querySelector('.js-input')
+// document.addEventListener('DOMContentLoaded', () => {
+//   const form = document.querySelector('form')
+//   const btnSubmit = document.querySelector('.js-btn-submit')
+//   const list = document.querySelector('.js-list')
+//   const input = document.querySelector('.js-input')
 
-  form.addEventListener('submit', onSubmit)
-  list.addEventListener('click', onDeleteItem)
+//   form.addEventListener('submit', onSubmit)
+//   list.addEventListener('click', onDeleteItem)
 
-  function onSubmit(event) {
-    event.preventDefault()
-    const listItem = createItem(input.value)
-    list.append(listItem)
-    form.reset()
+//   function onSubmit(event) {
+//     event.preventDefault()
+//     const listItem = createItem(input.value)
+//     list.append(listItem)
+//     form.reset()
+//   }
+//   function createItem(text) {
+//     const item = document.createElement('li')
+//     item.textContent = text
+//     const btnDelete = document.createElement('button')
+//     btnDelete.textContent = 'X'
+//     item.appendChild(btnDelete)
+//     return item
+//   }
+//   function onDeleteItem({ target }) {
+//     if (target.nodeName === 'BUTTON') {
+//       target.parentNode.remove()
+//     }
+//   }
+//   window.addEventListener('click', e => console.log(e.target.nodeName))
+// })
+
+const form = document.querySelector('form');
+const input = document.querySelector('input');
+const list = document.querySelector('.list');
+
+const createItem = text => {
+  const item = document.createElement('li');
+  item.textContent = text;
+
+  const btnDelete = document.createElement('button');
+  btnDelete.textContent = 'Delete item';
+
+  item.appendChild(btnDelete);
+  list.append(item);
+};
+
+const onSubmit = e => {
+  e.preventDefault();
+  createItem(input.value);
+  form.reset();
+};
+
+form.addEventListener('submit', onSubmit);
+
+const onDelete = e => {
+  if (e.target.nodeName === 'BUTTON') {
+    e.target.parentNode.remove();
   }
-  function createItem(text) {
-    const item = document.createElement('li')
-    item.textContent = text
-    const btnDelete = document.createElement('button')
-    btnDelete.textContent = 'X'
-    item.appendChild(btnDelete)
-    return item
-  }
-  function onDeleteItem({ target }) {
-    if (target.nodeName === 'BUTTON') {
-      target.parentNode.remove()
-    }
-  }
-  window.addEventListener('click', e => console.log(e.target.nodeName))
-})
+};
+
+list.addEventListener('click', onDelete);
