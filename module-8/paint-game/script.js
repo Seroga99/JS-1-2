@@ -2,7 +2,6 @@
 
 window.addEventListener('DOMContentLoaded', () => {
   const colorPicker = document.querySelector('.input__color');
-  const generateTableBtn = document.querySelector('.generateTableBtn');
 
   const form = document.querySelector('form');
   const trInput = document.querySelector('.trInput');
@@ -26,8 +25,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
     table.appendChild(tbody);
     removeTableBtn.addEventListener('click', () => tbody.remove());
-    let arr = Array.from(document.querySelectorAll('td'));
-    console.log(arr);
   };
 
   form.addEventListener('submit', e => {
@@ -36,7 +33,12 @@ window.addEventListener('DOMContentLoaded', () => {
     form.reset();
   });
 
-  table.addEventListener('click', e => console.log(e.currentTarget));
+  table.addEventListener('click', e => {
+    if (e.target.nodeName === 'TD') {
+      e.target.style.border = '1px solid blue';
+    }
+  });
+
   table.addEventListener('mousemove', e => {
     if (e.target.nodeName === 'TD') {
       e.target.style.backgroundColor = curentColor;

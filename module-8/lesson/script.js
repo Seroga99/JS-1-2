@@ -150,33 +150,34 @@
 //   window.addEventListener('click', e => console.log(e.target.nodeName))
 // })
 
-const form = document.querySelector('form');
-const input = document.querySelector('input');
-const list = document.querySelector('.list');
+// const form = document.querySelector('form');
+// const input = document.querySelector('input');
+// const list = document.querySelector('.list');
 
-const createItem = text => {
-  const item = document.createElement('li');
-  item.textContent = text;
+// const createItem = text => {
+//   const item = document.createElement('li');
+//   item.textContent = text;
 
-  const btnDelete = document.createElement('button');
-  btnDelete.textContent = 'Delete item';
+//   const btnDelete = document.createElement('button');
+//   btnDelete.textContent = 'Delete item';
 
-  item.appendChild(btnDelete);
-  list.append(item);
-};
+//   item.appendChild(btnDelete);
+//   list.append(item);
+// };
 
-const onSubmit = e => {
-  e.preventDefault();
-  createItem(input.value);
-  form.reset();
-};
+// const onSubmit = e => {
+//   e.preventDefault();
+//   createItem(input.value);
+//   form.reset();
+// };
 
-form.addEventListener('submit', onSubmit);
+// form.addEventListener('submit', onSubmit);
 
-const onDelete = e => {
-  if (e.target.nodeName === 'BUTTON') {
-    e.target.parentNode.remove();
-  }
-};
+// const onDelete = e => {
+//   if (e.target.nodeName === 'BUTTON') {
+//     e.target.parentNode.remove();
+//   }
+// };
 
-list.addEventListener('click', onDelete);
+// list.addEventListener('click', onDelete);
+
