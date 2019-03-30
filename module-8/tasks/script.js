@@ -61,6 +61,86 @@
 // }
 // form.addEventListener('submit', hadlerSubmit)
 
+
+// 555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555
+
+/*
+  Дан список изображений. Сделайте так, чтобы по клику на картинку 
+  алертом выводился ее src. Обязательно используйте делегирование событий.
+*/
+
+// let images = document.querySelector('.images');
+
+// images.addEventListener('click', e =>{
+//   if(e.target.nodeName === "IMG") {
+//     alert(e.target.src)
+//   }
+// })
+
+
+
+// 666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666
+
+
+/*
+  Дан ul, а внутри него произвольное количество li с текстом и кнопкой. 
+  Сделайте так, чтобы по нажатию на кнопку, удалялся тот li в котором
+  она находится. Обязательно используйте делегирование событий.
+*/
+// const list = document.querySelector('.list')
+// list.addEventListener('click', e => {
+//   if(e.target.nodeName === 'BUTTON') {
+//     e.target.parentNode.remove()
+//   }
+// })
+
+
+
+// 777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
+
+
+/*
+  Дан набор инпутов. Сделайте так, чтобы при потере фокуса все 
+  инпуты проверяли свое содержимое на правильное количество символов. 
+  
+  - Сколько символов должно быть в инпуте, указывается в атрибуте data-length. 
+  - Если введено подходящее количество, то outline инпута становится зеленым, 
+    если неправильное - красным. Для добавления стилей, на вкладке CSS есть стили valid и invalid
+*/
+
+
+// const list = document.querySelector('.input-list');
+
+// list.addEventListener('focusout', e => {
+//   if(e.target.nodeName === 'INPUT') {
+//     if(e.target.dataset.length == e.target.value.length) {
+//       e.target.style.backgroundColor = 'green'
+//     } else {
+//       e.target.style.backgroundColor = 'red'
+//     }
+//   }
+// })
+
+
+// 888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
+
+/*
+  Напишите скрипт который:
+    
+    - При фокусе текстового поля, в p.message рендерит строку "Input is in focus!"
+    - При наборе текста в инпуте (событие input), текущее его значение должно 
+      отображаться в p.input-value 
+*/
+
+// const message = document.querySelector('.message')
+// const input = document.querySelector('.input')
+// const inputValue = document.querySelector('.input-value')
+
+// input.addEventListener('focus', () => message.textContent = "Input is in focus!")
+// input.addEventListener('blur', () => message.textContent = '')
+// input.addEventListener('input', () => inputValue.textContent = 'Current input value: '+ input.value)
+
+
 ////////////999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
 
 /*
@@ -113,3 +193,40 @@
 // openModal.addEventListener('click', showModal)
 // closeModal.addEventListener('click', removeModal)
 // backdrop.addEventListener('click', removeModal)
+
+
+
+// 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10
+/*
+  Ознакомьтесь с HTML и CSS.
+  
+  Есть меню навигации, необходимо написать скрипт, который
+  при клике на пункт меню добавит ему класс active,
+  таким образом выделив текущую (активную) ссылку,
+  при этом убрав его у всех остальных элементов меню.
+  
+  Пунктов меню может быть произвольное количество, используйте
+  прием делегирование событий. Учтите клик по самому ul, его
+  необходимо игнорировать.
+  
+  При клике по ссылкам не должна перезагружаться страница!
+*/
+
+
+const nav = document.querySelector(".js-menu")
+nav.addEventListener("click", handleNavClick);
+
+function handleNavClick(event) {
+  event.preventDefault();
+  const target = event.target;
+  if (target.nodeName !== "A") return;
+  setActiveLink(target);
+}
+
+function setActiveLink(nextActiveLink) {
+  const currentActiveLink = nav.querySelector("a.active");
+  if (currentActiveLink) {
+    currentActiveLink.classList.remove("active");
+  }
+  nextActiveLink.classList.add("active");
+}
