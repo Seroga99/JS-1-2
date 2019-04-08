@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     arr.map(el => {
       const item = document.createElement('li');
       const img = document.createElement('img');
-      img.classList.add('grayscale');
+      img.classList.add('prevImg');
       img.setAttribute('src', el.preview);
       img.setAttribute('data-fullview', el.fullview);
       img.setAttribute('alt', el.alt);
@@ -100,15 +100,12 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   createPreview(galleryItems);
 
-  const images = document.querySelectorAll('.preview > img');
-  console.log(images);
-
+  const prevImgArr = document.querySelectorAll('.prevImg');
   preview.addEventListener('click', e => {
+    prevImgArr.forEach(el => el.classList.add('grayscale'));
     if (e.target.nodeName === 'IMG') {
       fullImg.setAttribute('src', e.target.dataset.fullview);
       e.target.classList.remove('grayscale');
-    }
-    if (fullImg.getAttribute('alt') !== e.target.getAttribute('alt')) {
     }
   });
 
@@ -128,12 +125,8 @@ document.addEventListener('DOMContentLoaded', () => {
         offset += cardWidth + cardMarginRight;
         preview.style.transform = `translateX(${offset}px)`;
       }
-      if (null) {
-      }
     });
     rightButton.addEventListener('click', () => {
-      console.log(offset);
-      console.log(maxX + cardWidth * 6);
       if (offset > maxX + cardWidth * 6) {
         offset -= cardWidth + cardMarginRight;
         preview.style.transform = `translateX(${offset}px)`;

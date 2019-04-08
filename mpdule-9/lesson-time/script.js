@@ -84,4 +84,35 @@
 //   time.textContent = val;
 // }
 
-let start = Date.now();
+// let start = Date.now();
+
+////////////////////////group 2///////////////////////////////
+
+// const time = document.querySelector('.time');
+// const start = document.querySelector('.start');
+// const stop = document.querySelector('.stop');
+
+// class Timer {
+//   constructor() {
+//     this.counter = 0;
+//     this.counterId = null;
+//     this.isStart = false;
+//   }
+//   hendleStart() {
+//     if (!this.isStart) {
+//       this.counterId = setInterval(() => {
+//         this.counter++;
+//         time.textContent = this.counter;
+//       }, 1000);
+//       this.isStart = true;
+//     }
+//   }
+//   hendleStop() {
+//     clearInterval(this.counterId);
+//     this.isStart = false;
+//   }
+// }
+// const t = new Timer();
+// console.log(t);
+// start.addEventListener('click', t.hendleStart.bind(t));
+// stop.addEventListener('click', t.hendleStop.bind(t));
