@@ -1,0 +1,28 @@
+{
+  "students": [
+    {
+      "first_name": "Anton",
+      "last_name": "Muzyka",
+      "Homeworks": 5,
+      "id": 1
+    },
+    {
+      "first_name": "Dan",
+      "last_name": "Komnatnyy",
+      "Homeworks": 7,
+      "id": 2
+    },
+    {
+      "first_name": "Dmitry",
+      "last_name": "Tantsor",
+      "Homeworks": "3",
+      "id": 3
+    },
+    {
+      "first_name": "Bohdan",
+      "last_name": "Kucheriavyy",
+      "Homeworks": "8",
+      "id": 4
+    }
+  ]
+}
