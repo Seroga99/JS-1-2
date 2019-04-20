@@ -75,3 +75,4 @@ const deleteStudent = () => {
   }).then(response => console.log(response));
 };
 removeBtn.addEventListener('click', deleteStudent);
+console.log(localStorage);

@@ -164,3 +164,41 @@
 
 // console.log(Object.entries(localStorage));
 
+const form = document.querySelector('form');
+const input = document.querySelector('input');
+const list = document.querySelector('ul');
+const deleteAll = document.querySelector('.deleteAll');
+
+form.addEventListener('submit', onSubmit);
+
+function onSubmit(e) {
+  e.preventDefault();
+  createItem();
+  form.reset();
+}
+deleteAll.addEventListener('click', () => {
+  localStorage.clear();
+  location.reload();
+});
+
+function createItem() {
+  const item = document.createElement('li');
+  item.textContent = input.value;
+  list.appendChild(item);
+}
+
+function getItemFromLocalSrorage() {
+  let localStorageArr = Object.values(localStorage);
+  localStorageArr.map(el => {
+    const item = document.createElement('li');
+    item.textContent = el;
+    list.appendChild(item);
+  });
+}
+getItemFromLocalSrorage();
+
+// const arr = [[0, 'sdcds'], [1, 'cdscdcs']];
+// const arrJSON = JSON.stringify(arr);
+// localStorage.setItem('array', arrJSON);
+// let a = JSON.parse(localStorage.getItem('array'));
+// console.log(a);
