@@ -39,6 +39,48 @@
 // sub.addEventListener('click', () => +resValue.innerHTML--)
 // add.addEventListener('click', () => +resValue.innerHTML++)
 
+/*
+  Есть счетчик (спан) и кнопки +1, -1, которые должны увеличивать и уменьшать значение счетчика на 1. 
+  
+  - Создайте класс Counter, который хранит одно поле value - текущее значение счетчика
+  - Класс принимает один параметр - onChange, функцию для обновления интерфейса при изменении счетчика
+  - Добавьте классу методы increment и decrement для увеличения и ументшение значения счетчика
+  - Привяжите вызовы методов и значение счетчика к раметке
+*/
+
+//Мой код
+class Value {
+  constructor(onChange) {
+    this.onChange = onChange;
+    this.value = 0;
+  }
+
+  increment() {
+    this.value += 1;
+    this.onChange();
+  }
+
+  decrement() {
+    this.value -= 1;
+    this.onChange();
+  }
+
+  getValue() {
+    return this.value;
+  }
+}
+
+const value = new Value(onChange);
+function onChange() {
+  spanValue.textContent = value.value;
+}
+const spanValue = document.querySelector('.value');
+const btnSub = document.querySelector('[data-action="sub"]');
+const btnAdd = document.querySelector('[data-action="add"]');
+
+btnSub.addEventListener('click', value.decrement.bind(value));
+btnAdd.addEventListener('click', value.increment.bind(value));
+
 // 4444444444444444444444444444444444444444444444444444444444444
 
 /*
@@ -61,7 +103,6 @@
 // }
 // form.addEventListener('submit', hadlerSubmit)
 
-
 // 555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555
 
 /*
@@ -77,10 +118,7 @@
 //   }
 // })
 
-
-
 // 666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666
-
 
 /*
   Дан ul, а внутри него произвольное количество li с текстом и кнопкой. 
@@ -94,10 +132,7 @@
 //   }
 // })
 
-
-
 // 777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
-
 
 /*
   Дан набор инпутов. Сделайте так, чтобы при потере фокуса все 
@@ -107,7 +142,6 @@
   - Если введено подходящее количество, то outline инпута становится зеленым, 
     если неправильное - красным. Для добавления стилей, на вкладке CSS есть стили valid и invalid
 */
-
 
 // const list = document.querySelector('.input-list');
 
@@ -120,7 +154,6 @@
 //     }
 //   }
 // })
-
 
 // 888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
 
@@ -139,7 +172,6 @@
 // input.addEventListener('focus', () => message.textContent = "Input is in focus!")
 // input.addEventListener('blur', () => message.textContent = '')
 // input.addEventListener('input', () => inputValue.textContent = 'Current input value: '+ input.value)
-
 
 ////////////999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
 
@@ -194,8 +226,6 @@
 // closeModal.addEventListener('click', removeModal)
 // backdrop.addEventListener('click', removeModal)
 
-
-
 // 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10
 /*
   Ознакомьтесь с HTML и CSS.
@@ -212,21 +242,20 @@
   При клике по ссылкам не должна перезагружаться страница!
 */
 
+// const nav = document.querySelector('.js-menu');
+// nav.addEventListener('click', handleNavClick);
 
-const nav = document.querySelector(".js-menu")
-nav.addEventListener("click", handleNavClick);
+// function handleNavClick(event) {
+//   event.preventDefault();
+//   const target = event.target;
+//   if (target.nodeName !== 'A') return;
+//   setActiveLink(target);
+// }
 
-function handleNavClick(event) {
-  event.preventDefault();
-  const target = event.target;
-  if (target.nodeName !== "A") return;
-  setActiveLink(target);
-}
-
-function setActiveLink(nextActiveLink) {
-  const currentActiveLink = nav.querySelector("a.active");
-  if (currentActiveLink) {
-    currentActiveLink.classList.remove("active");
-  }
-  nextActiveLink.classList.add("active");
-}
+// function setActiveLink(nextActiveLink) {
+//   const currentActiveLink = nav.querySelector('a.active');
+//   if (currentActiveLink) {
+//     currentActiveLink.classList.remove('active');
+//   }
+//   nextActiveLink.classList.add('active');
+// }
