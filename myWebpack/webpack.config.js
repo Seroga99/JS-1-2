@@ -44,6 +44,14 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.hbs$/,
+        use: [
+          {
+            loader: 'handlebars-loader',
+          },
+        ],
+      },
     ],
   },
   plugins: [
@@ -57,4 +65,13 @@ module.exports = {
       filename: 'style.css',
     }),
   ],
+  devServer: {
+    historyApiFallback: true,
+    noInfo: false,
+    quiet: false,
+    stats: 'errors-only',
+    clientLogLevel: 'warning',
+    compress: true,
+    port: 9001,
+  },
 };
