@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: ['babel-polyfill', './src/index.js'],
+  entry: './src/index.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'build'),
@@ -14,26 +14,31 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-env'],
-          plugins: ['@babel/plugin-proposal-object-rest-spread'],
-        },
+        // loader: 'babel-loader',
+        // options: {
+        //   presets: ['@babel/preset-env'],
+        //   plugins: ['@babel/plugin-proposal-object-rest-spread'],
+        // },
       },
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+        use: [
+          { loader: 'style-loader' },
+          MiniCssExtractPlugin.loader,
+          { loader: 'css-loader' },
+          { loader: 'postcss-loader' },
+        ],
       },
       {
         test: /\.scss$/,
         exclude: /node_modules/,
         use: [
-          'style-loader',
+          { loader: 'style-loader' },
           MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader',
-          'sass-loader',
+          { loader: 'css-loader' },
+          { loader: 'postcss-loader' },
+          { loader: 'sass-loader' },
         ],
       },
       {
